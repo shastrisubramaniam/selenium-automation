@@ -1,0 +1,55 @@
+package SeleniumTest;
+import Pages.LoginPage;
+import com.subbu.framework.Base.DriverContext;
+import com.subbu.framework.utilities.DatabaseUtil;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.Iterator;
+import org.apache.logging.log4j.*;
+public class LoginTest {
+private final String chromedriverpath = "C:\\Users\\Subramaniam\\Downloads\\chromedriver_win32\\chromedriver.exe";
+private final String url = "http://gmail.com";
+private final String expectedtitle = "Gmail";
+private final String titleresultdesc = "Title verification step was successful";
+static final String inputFile = "C:\\Users\\Subramaniam\\IdeaProjects\\Automation\\Automation_TestData.xlsx";
+static String emailaddress;
+static final Logger logger = LogManager.getLogger("pages.SeleniumTest.LoginTest.class");
+    @Before
+    public void Initialize()
+    {
+       System.setProperty("webdriver.chrome.driver",chromedriverpath);
+       DriverContext.Driver = new ChromeDriver();
+       DriverContext.Driver.navigate().to(url);
+       String connectstring = "jdbc:mariadb://localhost:3306/mysql?user=root&password=kali";
+       Connection conn = DatabaseUtil.Open(connectstring);
+       DatabaseUtil.ExecuteQuery("select * from user",conn);
+    }
+    @Test
+    public void LoginTest() {
+       logger.info("Log is starting");
+       LoginPage page = new LoginPage();
+       page.Login("bharati.shastri@gmail.com");
+       Assert.assertEquals(titleresultdesc, expectedtitle, DriverContext.Driver.getTitle().toString());
+       }
+    @After
+    public void TearDown()
+    {
+        DriverContext.Driver.close();
+        DriverContext.Driver.quit();
+    }
+}
