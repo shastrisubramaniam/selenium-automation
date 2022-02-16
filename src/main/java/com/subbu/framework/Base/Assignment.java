@@ -17,6 +17,15 @@ public class Assignment {
         }
         return str.toString();
     }
+    public static boolean checkIfPrime(int input) {
+        if (input==0  || input ==1){
+            return false;
+        }
+        if (input ==2 || (input % 2 > 0) ){
+            return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
 
         /*
@@ -30,5 +39,6 @@ public class Assignment {
                 System.out.println(returnmyHash().get(k));
             }
             System.out.println(reverseString("Subbu now is the time to get your act together"));
+            System.out.println(checkIfPrime(17));
     }
 }
