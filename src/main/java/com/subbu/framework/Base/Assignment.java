@@ -2,12 +2,35 @@ package com.subbu.framework.Base;
 
 import java.util.HashMap;
 
+import static java.lang.Math.round;
+
 public class Assignment {
     public static HashMap returnmyHash() {
         HashMap hm = new HashMap();
         hm.put(1,"Subbu");
         hm.put(2,"Subramaniam");
         return hm;
+    }
+    public static String[] splitStrings(String input,float splitcnt) {
+        int i=0;
+        int start = 0;
+        int end = i + (int)splitcnt;
+        int loop = round(input.length() / splitcnt);
+        String[] output = new String[loop];
+            for (i = 0; i < loop; i++) {
+                if (start >= input.length()) {
+                    output[i]= input.substring(input.length() + 1 - (int)splitcnt);
+                    for (int j = output[i].length(); j < splitcnt; j++) {
+                        output[i] = output[i].concat("_");
+                    }
+                    return output;
+                }
+                output[i]= input.substring(start, end);
+                start = start + end;
+                end = start + end;
+
+            }
+        return output;
     }
     public static String reverseString(String input) {
         char[] charinputarray = input.toCharArray();
@@ -40,5 +63,9 @@ public class Assignment {
             }
             System.out.println(reverseString("Subbu now is the time to get your act together"));
             System.out.println(checkIfPrime(17));
+            for (int k = 0;k < splitStrings("abcde",2).length;k++) {
+                System.out.println(splitStrings("abcde",2)[k]);
+            }
+
     }
 }
