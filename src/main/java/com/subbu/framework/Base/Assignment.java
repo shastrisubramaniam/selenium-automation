@@ -1,5 +1,6 @@
 package com.subbu.framework.Base;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static java.lang.Math.round;
@@ -10,6 +11,23 @@ public class Assignment {
         hm.put(1,"Subbu");
         hm.put(2,"Subramaniam");
         return hm;
+    }
+    public static String createphonenumbers( int[] numbers) {
+        String strnumbers = Arrays.toString(numbers).replace("[","").replace("]","");
+        String[] arraynums = strnumbers.split(",");
+        String npa = "";
+        String nxx = "";
+        String localnum = "";
+        for ( int i =0;i <3;i++) {
+           npa = npa.concat(arraynums[i]);
+        }
+        for ( int j =3;j <6;j++) {
+            nxx= nxx.concat(arraynums[j]);
+        }
+        for ( int k =6;k < 10;k++) {
+            localnum = localnum.concat(arraynums[k]);
+        }
+        return npa + "-" + nxx + "-" + localnum;
     }
     public static String[] splitStrings(String input,float splitcnt) {
         int i=0;
@@ -66,6 +84,7 @@ public class Assignment {
             for (int k = 0;k < splitStrings("abcde",2).length;k++) {
                 System.out.println(splitStrings("abcde",2)[k]);
             }
-
+            int[] intnumbers = {0,1,2,3,4,5,6,7,8,9};
+            System.out.println(createphonenumbers(intnumbers));
     }
 }
