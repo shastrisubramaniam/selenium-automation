@@ -50,6 +50,20 @@ public class Assignment {
             }
         return output;
     }
+    public static String whoLikesIt(String[] names) {
+        switch (names.length) {
+            case 0:
+                return "no one likes it";
+            case 1:
+                return names[0] + "likes it";
+            case 2:
+                return names[0] + "and" + names[1] + "like this";
+            case 3:
+                return names[0] + "," + names[1] + " and " + names[2] + " others like this";
+            default:
+                return names[0] + "," + names[1] + " and " + (names.length -2) + " others like this";
+                }
+        }
     public static String reverseString(String input) {
         char[] charinputarray = input.toCharArray();
         StringBuilder str = new StringBuilder();
@@ -86,5 +100,7 @@ public class Assignment {
             }
             int[] intnumbers = {0,1,2,3,4,5,6,7,8,9};
             System.out.println(createphonenumbers(intnumbers));
+            String[] likesarray = {"Peter","Jacob","Alex","Max","John","Mark"};
+            System.out.println(whoLikesIt(likesarray));
     }
 }
