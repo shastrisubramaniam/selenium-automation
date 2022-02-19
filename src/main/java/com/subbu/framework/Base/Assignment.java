@@ -64,6 +64,16 @@ public class Assignment {
                 return names[0] + "," + names[1] + " and " + (names.length -2) + " others like this";
                 }
         }
+    public static String maskCreditCard(String creditcard) {
+        char[] creditarray = creditcard.toCharArray();
+        String maskedcreditcard="";
+        StringBuilder str = new StringBuilder();
+        for (int i=0;i <= creditcard.length() -5;i++ ) {
+            creditarray[i] = 'x';
+        }
+        str = str.append(creditarray);
+        return str.toString();
+    }
     public static String reverseString(String input) {
         char[] charinputarray = input.toCharArray();
         StringBuilder str = new StringBuilder();
@@ -102,5 +112,6 @@ public class Assignment {
             System.out.println(createphonenumbers(intnumbers));
             String[] likesarray = {"Peter","Jacob","Alex","Max","John","Mark"};
             System.out.println(whoLikesIt(likesarray));
+            System.out.println(maskCreditCard("1234567890123466"));
     }
 }
