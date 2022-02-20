@@ -74,6 +74,14 @@ public class Assignment {
         str = str.append(creditarray);
         return str.toString();
     }
+    public static int findNextSquare(double number) {
+        double squarenum = (Math.sqrt(number)*Math.sqrt(number));
+        if (Math.sqrt(number)<=(int)Math.sqrt(number)){
+            System.out.println("Equal to or less than");
+            return (int)squarenum;
+        }
+            return ((int)(Math.sqrt(number)) +1) * ((int)(Math.sqrt(number)) +1);
+    }
     public static String reverseString(String input) {
         char[] charinputarray = input.toCharArray();
         StringBuilder str = new StringBuilder();
@@ -113,5 +121,6 @@ public class Assignment {
             String[] likesarray = {"Peter","Jacob","Alex","Max","John","Mark"};
             System.out.println(whoLikesIt(likesarray));
             System.out.println(maskCreditCard("1234567890123466"));
+            System.out.println(findNextSquare(145));
     }
 }
