@@ -82,6 +82,9 @@ public class Assignment {
         }
             return ((int)(Math.sqrt(number)) +1) * ((int)(Math.sqrt(number)) +1);
     }
+    public static String bitCounting(int number) {
+        return Integer.toBinaryString(number);
+    }
     public static String reverseString(String input) {
         char[] charinputarray = input.toCharArray();
         StringBuilder str = new StringBuilder();
@@ -98,6 +101,13 @@ public class Assignment {
             return true;
         }
         return false;
+    }
+    public static int singlenumber (int[] nums) {
+        int a=0;
+        for (int x: nums) {
+            a =a ^ x;
+        }
+        return a;
     }
     public static void main(String[] args) {
 
@@ -122,5 +132,8 @@ public class Assignment {
             System.out.println(whoLikesIt(likesarray));
             System.out.println(maskCreditCard("1234567890123466"));
             System.out.println(findNextSquare(145));
+            System.out.println(bitCounting(8));
+            int [] nums = {2,2,1,1,3};
+            System.out.println(singlenumber(nums));
     }
 }
