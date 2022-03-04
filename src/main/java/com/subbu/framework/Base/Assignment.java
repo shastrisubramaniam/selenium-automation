@@ -2,6 +2,7 @@ package com.subbu.framework.Base;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 import static java.lang.Math.round;
 
@@ -109,6 +110,26 @@ public class Assignment {
         }
         return a;
     }
+    public static int removeDuplicates(int[] nums) {
+        int j=0;
+        int i =1;
+        while ( i < nums.length) {
+            if (nums[j] !=nums[i]) {
+                nums[j] = nums[i];
+                j++;
+            }
+                i++;
+            }
+        return j;
+    }
+    public static int sum(String input) {
+        StringTokenizer str = new StringTokenizer(input,"+");
+        int result = 0;
+        for (int i=0;i <= str.countTokens();i++) {
+            result = result + Integer.parseInt(str.nextToken());
+        }
+        return result;
+    }
     public static void main(String[] args) {
 
         /*
@@ -135,5 +156,6 @@ public class Assignment {
             System.out.println(bitCounting(8));
             int [] nums = {2,2,1,1,3};
             System.out.println(singlenumber(nums));
+            System.out.println(sum("1+7"));
     }
 }
