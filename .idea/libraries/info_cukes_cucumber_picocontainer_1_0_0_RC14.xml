@@ -1,0 +1,35 @@
+<component name="libraryTable">
+  <library name="info.cukes:cucumber-picocontainer:1.0.0.RC14" type="repository">
+    <properties maven-id="info.cukes:cucumber-picocontainer:1.0.0.RC14" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-picocontainer/1.0.0.RC14/cucumber-picocontainer-1.0.0.RC14.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-java/1.0.0.RC14/cucumber-java-1.0.0.RC14.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.0.0.RC14/cucumber-core-1.0.0.RC14.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/gherkin/2.7.6/gherkin-2.7.6.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.4.2/xstream-1.4.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/java-diff-utils/diffutils/1.2.1/diffutils-1.2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-html/0.2.1/cucumber-html-0.2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.14.1/picocontainer-2.14.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-picocontainer/1.0.0.RC14/cucumber-picocontainer-1.0.0.RC14-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-java/1.0.0.RC14/cucumber-java-1.0.0.RC14-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.0.0.RC14/cucumber-core-1.0.0.RC14-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/gherkin/2.7.6/gherkin-2.7.6-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.4.2/xstream-1.4.2-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/java-diff-utils/diffutils/1.2.1/diffutils-1.2.1-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-html/0.2.1/cucumber-html-0.2.1-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.14.1/picocontainer-2.14.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-picocontainer/1.0.0.RC14/cucumber-picocontainer-1.0.0.RC14-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-java/1.0.0.RC14/cucumber-java-1.0.0.RC14-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-core/1.0.0.RC14/cucumber-core-1.0.0.RC14-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/gherkin/2.7.6/gherkin-2.7.6-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/xstream/xstream/1.4.2/xstream-1.4.2-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/googlecode/java-diff-utils/diffutils/1.2.1/diffutils-1.2.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/info/cukes/cucumber-html/0.2.1/cucumber-html-0.2.1-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/picocontainer/picocontainer/2.14.1/picocontainer-2.14.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
