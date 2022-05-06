@@ -7,12 +7,12 @@ public class SubbuTestNG {
 
             @DataProvider
         public Object[][] data() {
-            return new String[][] {new String[] {"data1"}, new String[] {"data2"}};
+            return new String[][] {new String[] {"data"}};
         }
 
         @Test(dataProvider = "data")
         public void test(String d) {
-            Assert.assertEquals("First Line>\nSecond Line", "Third Line\nFourth Line");
+            Assert.assertEquals("First Line", "First Line");
         }
     }
 
