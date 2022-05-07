@@ -1,16 +1,14 @@
 package com.subbu.framework.Base;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import static org.openqa.selenium.support.PageFactory.*;
 
 public abstract class BasePage {
-  /*public BasePage()
+  public BasePage()
   {
+      //System.out.println("Instantiating BasePage");
       PageFactory.initElements(DriverContext.Driver,this);
   }
-*/
-    public <TPage extends BasePage> TPage As(Class<TPage> pageInstance)
+   /* public <TPage extends BasePage> TPage As(Class<TPage> pageInstance)
     {
         try
         {
@@ -23,5 +21,5 @@ public abstract class BasePage {
 
         return null;
     }
-
+*/
 }

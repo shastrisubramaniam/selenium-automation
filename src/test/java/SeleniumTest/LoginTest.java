@@ -1,16 +1,13 @@
 package SeleniumTest;
 import Pages.LoginPage;
 import com.subbu.framework.Base.DriverContext;
-import com.subbu.framework.utilities.DatabaseUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.sql.Connection;
 public class LoginTest {
 private final String chromedriverpath = "C:\\Users\\Subramaniam\\Downloads\\chromedriver_win32\\chromedriver.exe";
 private final String url = "http://gmail.com";
@@ -22,24 +19,24 @@ static final Logger logger = LogManager.getLogger("pages.SeleniumTest.LoginTest.
     @Before
     public void Initialize()
     {
-       System.setProperty("webdriver.chrome.driver",chromedriverpath);
-       DriverContext.Driver = new ChromeDriver();
-       DriverContext.Driver.navigate().to(url);
-       String connectstring = "jdbc:mariadb://localhost:3306/mysql?user=root&password=kali";
-       Connection conn = DatabaseUtil.Open(connectstring);
-       DatabaseUtil.ExecuteQuery("select * from user",conn);
+       //System.setProperty("webdriver.chrome.driver",chromedriverpath);
+       //DriverContext.Driver = new ChromeDriver();
+       //DriverContext.Driver.navigate().to(url);
+       //String connectstring = "jdbc:mariadb://localhost:3306/mysql?user=root&password=kali";
+       //Connection conn = DatabaseUtil.Open(connectstring);
+       //DatabaseUtil.ExecuteQuery("select * from user",conn);
     }
     @Test
-    public void LoginTest() {
+    public void Login() {
        logger.info("Log is starting");
        LoginPage page = new LoginPage();
        page.Login("bharati.shastri@gmail.com");
-       Assert.assertEquals(titleresultdesc, expectedtitle, DriverContext.Driver.getTitle().toString());
+       Assert.assertEquals(titleresultdesc, expectedtitle, DriverContext.Driver.getTitle());
+       page.closeapp();
        }
     @After
     public void TearDown()
     {
-        DriverContext.Driver.close();
         DriverContext.Driver.quit();
     }
 }
