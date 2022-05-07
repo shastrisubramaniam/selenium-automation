@@ -8,7 +8,7 @@ public abstract class BasePage {
       //System.out.println("Instantiating BasePage");
       PageFactory.initElements(DriverContext.Driver,this);
   }
-   /* public <TPage extends BasePage> TPage As(Class<TPage> pageInstance)
+    public <TPage extends BasePage> TPage As(Class<TPage> pageInstance)
     {
         try
         {
@@ -21,5 +21,4 @@ public abstract class BasePage {
 
         return null;
     }
-*/
 }
