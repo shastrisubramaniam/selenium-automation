@@ -1,5 +1,6 @@
 package SeleniumTest;
-import Pages.LoginPage;
+import com.subbu.framework.Base.BasePage;
+import com.subbu.test.Pages.LoginPage;
 import com.subbu.framework.Base.DriverContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,8 +8,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-public class LoginTest {
+public class LoginTest extends BasePage {
 private final String chromedriverpath = "C:\\Users\\Subramaniam\\Downloads\\chromedriver_win32\\chromedriver.exe";
 private final String url = "http://gmail.com";
 private final String expectedtitle = "Gmail";
@@ -30,9 +30,10 @@ static final Logger logger = LogManager.getLogger("pages.SeleniumTest.LoginTest.
     public void Login() {
        logger.info("Log is starting");
        LoginPage page = new LoginPage();
+       //LoginPage page = getInstance(LoginPage.class);
        page.Login("bharati.shastri@gmail.com");
        Assert.assertEquals(titleresultdesc, expectedtitle, DriverContext.Driver.getTitle());
-       page.closeapp();
+        page.closeapp();
        }
     @After
     public void TearDown()
