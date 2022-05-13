@@ -1,5 +1,6 @@
 package com.subbu.framework.Base;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -26,7 +27,9 @@ public class DriverContext {
             default:
                 System.setProperty("webdriver.chrome.driver","C:\\Users\\Subramaniam\\Downloads\\chromedriver_win32\\chromedriver.exe");
                 DriverContext.Driver = new ChromeDriver();
-                DriverContext.Driver.navigate().to("http://gmail.com");
+                DriverContext.Driver.navigate().to("https://automatenow.io/sandbox-automation-testing-practice-website/");
+                DriverContext.Driver.manage().window().maximize();
+                JavascriptExecutor js = (JavascriptExecutor)DriverContext.Driver;
                 break;
         }
         return DriverContext.Driver;
