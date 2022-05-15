@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="methods">
-
+<suite name="Automation Test Suite" parallel="methods" allow-return-values="true">
+    <test name="HomePage">
+        <classes>
+            <class name="SeleniumTest.HomePageTest"/>
+        </classes>
+    </test>
+    <test name ="Verifyformfieldssubmit">
+        <classes>
+            <class name="SeleniumTest.FormFieldsTest"/>
+        </classes>
+    </test>
+    <test name="verifyTables">
+        <classes>
+            <class name="SeleniumTest.TablesTest"/>
+        </classes>
+    </test>
+    <test name="verifyPopups">
+        <classes>
+            <class name="SeleniumTest.PopupsTest">
+            </class>
+        </classes>
+    </test>
+    <test name="testBrokenLinks">
+        <classes>
+            <class name="SeleniumTest.BrokenLinkText">
+            </class>
+        </classes>
+    </test>
 </suite>

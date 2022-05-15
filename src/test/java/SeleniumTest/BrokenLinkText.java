@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class BrokenLinkText {
 
-    @Test
+    @Test(priority=1)
     public void testBrokenLinks() {
         HomePage home = new HomePage();
         home.acceptcookie();

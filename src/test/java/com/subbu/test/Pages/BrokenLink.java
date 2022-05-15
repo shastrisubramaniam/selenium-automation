@@ -17,9 +17,7 @@ public class BrokenLink {
         PageFactory.initElements(DriverContext.Driver,this);
     }
     public boolean verifylinks(){
-        //JavascriptExecutor js = (JavascriptExecutor)DriverContext.Driver;
-        //js.executeScript("arguments[0].click()", brokenlink);
-        //FluentWait wait = new FluentWait(brokenlink);
+        //FluentWait wait = new FluentWait(brokenlink).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(10)).until()
         //wait.until(a->!brokenlink.isDisplayed());
         HttpURLConnection http;
         try {
