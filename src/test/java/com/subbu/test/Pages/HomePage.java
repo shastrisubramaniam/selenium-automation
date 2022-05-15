@@ -2,10 +2,12 @@ package com.subbu.test.Pages;
 
 import com.subbu.framework.Base.DriverContext;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
 import java.util.List;
 
 public class HomePage {
@@ -52,7 +54,6 @@ public class HomePage {
     public HomePage(){
         DriverContext.Driver = DriverContext.getDriver("chrome");
         PageFactory.initElements(DriverContext.Driver,this);
-
     }
     public void GotoFormfields(){
         formfields.click();
@@ -106,6 +107,8 @@ public class HomePage {
         carousel.click();
     }
     public void GotoBrokenLinks() {
+        JavascriptExecutor js = (JavascriptExecutor)DriverContext.Driver;
+        js.executeScript("window.scrollBy(0,350)");
         brokenlinks.click();
     }
     public void GotoSlider() {
