@@ -1,16 +1,17 @@
 package com.subbu.test.Pages;
 
+import com.subbu.framework.Base.BasePage;
 import com.subbu.framework.Base.DriverContext;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class HomePage {
+public class HomePage extends BasePage {
     @FindBy(how=How.XPATH,using="//a[@href=\"https://automatenow.io/form-fields/\"]")
     public WebElement formfields;
     @FindBy(how=How.XPATH,using ="//a[@href=\"https://automatenow.io/tables/\"]")
@@ -51,15 +52,18 @@ public class HomePage {
     public WebElement slider;
     @FindBy(how=How.XPATH,using="//a[@data-cli_action=\"accept\"]")
     public WebElement cookie;
-    public HomePage(){
-        DriverContext.Driver = DriverContext.getDriver("chrome");
-        PageFactory.initElements(DriverContext.Driver,this);
+    public HomePage(WebDriver driver){
+        super(driver);
+        //DriverContext.Driver = DriverContext.getDriver("chrome");
+        //PageFactory.initElements(DriverContext.Driver,this);
     }
-    public void GotoFormfields(){
+    public FormFields GotoFormfields(){
         formfields.click();
+        return newInstance(FormFields.class);
     }
-    public void Gototables() {
+    public Tables Gototables() {
         tables.click();
+        return newInstance(Tables.class);
     }
     public void Gotocalendar(){
         calendar.click();
@@ -85,8 +89,9 @@ public class HomePage {
     public void GotoClickEvents() {
         clickevents.click();
     }
-    public void GotoPopups() {
+    public Popups GotoPopups() {
         popups.click();
+        return newInstance(Popups.class);
     }
     public void GotoModals() {
         modals.click();
@@ -114,8 +119,9 @@ public class HomePage {
     public void GotoSlider() {
         slider.click();
     }
-    public void acceptcookie() {
+    public HomePage acceptcookie() {
         cookie.click();
+        return this;
     }
     public List<WebElement> getWebElementsOnPage() {
         return DriverContext.Driver.findElements(By.xpath("//a[contains(@class,\"wp-block-button__link\")]"));

@@ -1,6 +1,5 @@
 package steps;
 
-import com.subbu.framework.Base.BasePage;
 import com.subbu.framework.Base.DriverContext;
 import com.subbu.test.Pages.LoginPage;
 import io.cucumber.datatable.DataTable;
@@ -9,7 +8,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class LoginSteps extends BasePage {
+public class LoginSteps {
     private final String expectedtitle = "Gmail";
     private final String titleresultdesc = "Title verification step was successful";
     private LoginPage loginPage;

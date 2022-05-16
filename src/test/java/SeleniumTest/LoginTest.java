@@ -1,14 +1,13 @@
 package SeleniumTest;
-import com.subbu.framework.Base.BasePage;
-import com.subbu.test.Pages.LoginPage;
 import com.subbu.framework.Base.DriverContext;
+import com.subbu.test.Pages.LoginPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-public class LoginTest extends BasePage {
+public class LoginTest {
 private final String chromedriverpath = "C:\\Users\\Subramaniam\\Downloads\\chromedriver_win32\\chromedriver.exe";
 private final String url = "http://gmail.com";
 private final String expectedtitle = "Gmail";

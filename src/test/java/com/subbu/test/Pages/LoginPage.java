@@ -1,6 +1,5 @@
 package com.subbu.test.Pages;
 
-import com.subbu.framework.Base.BasePage;
 import com.subbu.framework.Base.DriverContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage extends BasePage
+public class LoginPage
 {
     @FindBy(how= How.XPATH,using = "//div/input[@type=\"email\"]")
     public WebElement emailid;

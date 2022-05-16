@@ -1,19 +1,19 @@
 package SeleniumTest;
 
 import com.subbu.framework.Base.DriverContext;
-import com.subbu.test.Pages.HomePage;
 import com.subbu.test.Pages.Tables;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
-public class TablesTest {
+public class TablesTest extends BaseTest{
     @Test
     public void verifyTables() {
-        HomePage home = new HomePage();
-        home.acceptcookie();
-        home.Gototables();
-        Tables page = new Tables();
-        System.out.println(page.getItems().entrySet());
+        //HomePage home = new HomePage(getDriver());
+        System.out.println(openhomepage().acceptcookie().Gototables().getItems().entrySet());
+        //home.acceptcookie();
+        //home.Gototables();
+        Tables page = new Tables(getDriver());
+        //System.out.println(page.getItems().entrySet());
         JavascriptExecutor js = (JavascriptExecutor)(DriverContext.Driver);
         js.executeScript("window.scrollBy(0,700)");
         System.out.println(page.getCountriesByPopulation().entrySet());

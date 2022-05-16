@@ -1,13 +1,14 @@
 package com.subbu.test.Pages;
 
+import com.subbu.framework.Base.BasePage;
 import com.subbu.framework.Base.DriverContext;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
-public class Popups {
+public class Popups extends BasePage {
     @FindBy(how= How.CSS,using="#alert")
     public WebElement alertbutton;
     @FindBy(how=How.CSS,using="#confirm")
@@ -18,8 +19,9 @@ public class Popups {
     public WebElement confirmresult;
     @FindBy(how=How.CSS,using="#promptResult")
     public WebElement promptresult;
-    public Popups() {
-        PageFactory.initElements(DriverContext.Driver,this);
+    public Popups(WebDriver driver) {
+        super(driver);
+        //PageFactory.initElements(DriverContext.Driver,this);
     }
     public boolean alertpopup() {
         alertbutton.click();

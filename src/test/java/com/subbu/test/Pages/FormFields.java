@@ -1,15 +1,16 @@
 package com.subbu.test.Pages;
 
+import com.subbu.framework.Base.BasePage;
 import com.subbu.framework.Base.DriverContext;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class FormFields {
+public class FormFields extends BasePage {
     @FindBy(how= How.XPATH,using = "//input[@name=\"g1103-inputfield\"]")
     public WebElement inputfield;
     @FindBy(how=How.XPATH,using ="//div[@class=\"grunion-field-wrap grunion-field-checkbox-multiple-wrap\"]//child::label//child::input")
@@ -26,17 +27,15 @@ public class FormFields {
     public WebElement submit;
     @FindBy(how=How.XPATH,using="//div/div/blockquote//child::p")
     public List<WebElement> formfieldsresult;
-    public FormFields()
+    public FormFields(WebDriver driver)
     {
         //DriverContext.Driver = DriverContext.getDriver("chrome");
-        PageFactory.initElements(DriverContext.Driver,this);
+        //PageFactory.initElements(DriverContext.Driver,this);
+        super(driver);
     }
     public boolean checkformfields() {
-        if (inputfield.isDisplayed() && checkboxes.size() >0 && radiobuttons.size() >0 && dropdown.size() >0
-        && email.isDisplayed() && submit.isDisplayed())
-            return true;
-        else
-            return false;
+        return inputfield.isDisplayed() && checkboxes.size() > 0 && radiobuttons.size() > 0 && dropdown.size() > 0
+                && email.isDisplayed() && submit.isDisplayed();
     }
     public List<WebElement> submitform(String[] expectedvalues) {
         inputfield.sendKeys(expectedvalues[0]);
