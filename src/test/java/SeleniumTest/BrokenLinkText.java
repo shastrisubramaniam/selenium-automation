@@ -1,8 +1,8 @@
 package SeleniumTest;
 
 import com.subbu.test.Pages.BrokenLink;
+import org.testng.annotations.*;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class BrokenLinkText extends BaseTest {
 

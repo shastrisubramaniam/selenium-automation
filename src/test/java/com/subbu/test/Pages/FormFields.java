@@ -40,7 +40,8 @@ public class FormFields extends BasePage {
     public List<WebElement> submitform(String[] expectedvalues) {
         inputfield.sendKeys(expectedvalues[0]);
         for (WebElement checkbox : checkboxes) {
-            //System.out.println(checkbox.getAttribute("value"));
+            System.out.println(checkbox.getAttribute("value"));
+            //System.out.println(expectedvalues[2]);
             if (checkbox.getAttribute("value").equals(expectedvalues[1])) {
                 JavascriptExecutor js = (JavascriptExecutor)DriverContext.Driver;
                 js.executeScript("arguments[0].click()", checkbox);
